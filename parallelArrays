@@ -1,0 +1,51 @@
+using System;
+
+namespace LabSevenFive
+{
+    class Catering
+    {
+        static void Main(string[] args)
+        {
+            //Parallel arrays declaration
+            int[] mealOrder = { 10, 20, 30, 40}; //Declare int arrays to hold number of pizza in arrays
+            decimal[] mealPrice = { 14.99M, 12.50M, 10.75M, 9.45M}; //delcare price to hold pizza price for a dedicated array index
+
+            Console.WriteLine("Please enter number of pizza: "); //Prompt user input
+            int mealOrdered = Convert.ToInt32(Console.ReadLine());
+
+            mealOrder = new int[mealOrdered]; //Convert user input as arrays
+
+            for (int i = 0; i < mealOrdered; i++)
+            {
+                //Check the condition for user input
+                if (mealOrdered <= 10)
+                {
+                    decimal totalBill = mealOrdered * mealPrice[0];
+                    Console.WriteLine("Total bill : " + totalBill);
+                    break;
+                } else if (mealOrdered >= 11 && mealOrdered <= 20)
+                {
+                    decimal totalBill = mealOrdered * mealPrice[1];
+                    Console.WriteLine("Total bill : " + totalBill);
+                    break;
+                } else if (mealOrdered >= 21 && mealOrdered <= 30)
+                {
+                    decimal totalBill = mealOrdered * mealPrice[2];
+                    Console.WriteLine("Total bill : " + totalBill);
+                    break;
+                } else if (mealOrdered >= 31 && mealOrdered <= 40)
+                {
+                    decimal totalBill = mealOrdered * mealPrice[3];
+                    Console.WriteLine("Total bill : " + totalBill);
+                    break;
+                } else
+                {
+                    Console.WriteLine("Please enter a valid number");
+                    break;
+                }
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
